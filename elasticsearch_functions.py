@@ -4,7 +4,7 @@ import random
 
 es = Elasticsearch(hosts="http://localhost:9200/", http_auth=('elastic', 'password'), timeout=30, max_retries=10, retry_on_timeout=True)
 
-IDX = '2fa_idx'
+IDX = '2fa_3shards_idx'
 ISSENT_REVERSE_IDX = 'issent_reverse_idx'
 
 def get_issent_reverse():
@@ -16,7 +16,8 @@ ISSENT_REVERSE = bool(get_issent_reverse())
 
 
 failure_count = 0
-MAX_ID = 4294967295
+MAX_ID = 294967295
+# MAX_ID = 4294967295
 CHECK_ID_RANGE = 1000000
 MAX_FAILURE_COUNT = 10
 
